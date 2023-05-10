@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.87e0d30d.css",
+    "main.js": "/static/js/main.8b3fc0b3.js",
+    "static/js/787.6354693f.chunk.js": "/static/js/787.6354693f.chunk.js",
+    "static/media/error 404.gif": "/static/media/error 404.f9bfb93fa25295fe0315.gif",
+    "static/media/globe-flags.jpeg": "/static/media/globe-flags.e64e5533d5f5ea8b9f57.jpeg",
+    "static/media/bokeh-blurred-defocused-lights-blue-background-can-also-be-used-as-overlay_527140-330.jpg": "/static/media/bokeh-blurred-defocused-lights-blue-background-can-also-be-used-as-overlay_527140-330.89409cf217ee77a01403.jpg",
+    "static/media/contact-us.jpg": "/static/media/contact-us.ac36580a5ef34b08c9f3.jpg",
+    "static/media/wallpaper-background-several-transparent-circles_58702-7112.avif": "/static/media/wallpaper-background-several-transparent-circles_58702-7112.69cf8b153e5f04ca4fbc.avif",
+    "index.html": "/index.html",
+    "main.87e0d30d.css.map": "/static/css/main.87e0d30d.css.map",
+    "main.8b3fc0b3.js.map": "/static/js/main.8b3fc0b3.js.map",
+    "787.6354693f.chunk.js.map": "/static/js/787.6354693f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.87e0d30d.css",
+    "static/js/main.8b3fc0b3.js"
+  ]
+}
