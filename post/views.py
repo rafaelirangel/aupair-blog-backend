@@ -14,6 +14,7 @@ class PostViewSet(viewsets.ModelViewSet):
         permissions.AllowAny
     ]
     serializer_class = PostSerializer
+    permission_classes = [permissions.AllowAny]   
 
 def create_post(request):
     if request.method == 'POST':
@@ -25,10 +26,12 @@ def create_post(request):
         form = PostForm()
     return render(request, 'create_post.html', {'form': form})
 
-def delete_post(request, post_id):
-    if request.method == 'DELETE':
-        post = get_object_or_404(Post, id=post_id)
-        post.delete()
-        return HttpResponse(status=204)
-    else:
-        return HttpResponseNotAllowed(['DELETE'])
+    # def get_permissions(self):
+    #     if self.action == 'create' or self.action == 'update' or self.action == 'destroy':
+    #         permission_classes = [permissions.IsAuthenticated]
+    #     else:
+    #         permission_classes = [permissions.AllowAny]
+    #     return [permission() for permission in permission_classes]
+
+    # def perform_create(self, serializer):
+    #     serializer.save(user=self.request.user)
