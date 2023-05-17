@@ -13,6 +13,17 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+      
+    def can_edit(self, user):
+        return user == self.user
+    
+    def delete(self, *args, **kwargs):
+        # Delete the image file if it exists
+        if self.post_img:
+            if os.path.isfile(self.post_img.path):
+                os.remove(self.post_img.path)
+        # Call the delete method of the parent class
+        super().delete(*args, **kwargs)
 
     def total_likes(self):
         return self.likes.count()
@@ -42,3 +53,4 @@ class Like(models.Model):
     # username = models.ForeignKey(User, related_name='details', on_delete=models.CASCADE)
     post = models.ForeignKey(
         Post, related_name='post_likes', on_delete=models.CASCADE)
+
