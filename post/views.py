@@ -8,47 +8,44 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 from django.shortcuts import get_object_or_404
 from django.db.models import F
 
-
-##Post CRUD
+# Post CRUD
 class PostList(generics.ListCreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
     permission_classes = [AllowAny]
-    
+
 
 class PostDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Post.objects.all()
-    permission_classes = [
-        permissions.AllowAny
-    ]
     serializer_class = PostSerializer
     permission_classes = [AllowAny]
-    
+
     def perform_destroy(self, instance):
         # Delete associated image if any
         if instance.post_img:
             instance.post_img.delete()
         instance.delete()
-        
-        
-##Comment CRUD
+
+
+# Comment CRUD
 class CommentList(generics.ListCreateAPIView):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
-    permission_classes = [AllowAny]     
-    
+    permission_classes = [AllowAny]
+
     # def perform_create(self, serializer):
     #     serializer.save(owner=self.request.user)
-    
+
+
 class CommentDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Comment.objects.all()
-    serializer_class = CommentSerializer 
+    serializer_class = CommentSerializer
     permission_classes = [AllowAny]
     # permission_classes = [permissions.IsAuthenticatedOrReadOnly,
     #                       IsOwnerOrReadOnly]
-    
 
-##Likes    
+
+# Likes
 class LikeList(generics.ListCreateAPIView):
     queryset = Like.objects.all()
     serializer_class = LikeSerializer

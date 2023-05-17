@@ -11,10 +11,9 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
-    
+
     def total_likes(self):
         return self.likes.count()
-
 
 # Comment Model
 class Comment(models.Model):
@@ -22,7 +21,8 @@ class Comment(models.Model):
     # username = models.ForeignKey(User, related_name='details', on_delete=models.CASCADE)
     comment = models.CharField(max_length=250, blank=True)
     comment_date = models.DateTimeField(auto_now=True)
-    post = models.ForeignKey(Post, related_name='comments', on_delete=models.CASCADE)
+    post = models.ForeignKey(
+        Post, related_name='comments', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.comment
@@ -31,9 +31,8 @@ class Comment(models.Model):
     # class Meta:
     #     ordering = ['comment_date']
 
-#Like model
+# Like model
 class Like(models.Model):
     # username = models.ForeignKey(User, related_name='details', on_delete=models.CASCADE)
     post = models.ForeignKey(
         Post, related_name='post_likes', on_delete=models.CASCADE)
-
