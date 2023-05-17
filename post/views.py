@@ -3,14 +3,11 @@ from .models import Post, Comment, Like
 from rest_framework.response import Response
 from rest_framework import viewsets, permissions, generics
 from .serializers import PostSerializer, CommentSerializer, LikeSerializer
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from django.shortcuts import get_object_or_404
 from django.db.models import F
 
 # Post CRUD
-
-
 class PostList(generics.ListCreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
@@ -35,14 +32,13 @@ class CommentList(generics.ListCreateAPIView):
     serializer_class = CommentSerializer
     permission_classes = [AllowAny]
 
-    # def perform_create(self, serializer):
-    #     serializer.save(owner=self.request.user)
-
 
 class CommentDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
     permission_classes = [AllowAny]
+    lookup_url_kwarg = 'comment_pk'
+  
     # permission_classes = [permissions.IsAuthenticatedOrReadOnly,
     #                       IsOwnerOrReadOnly]
 
