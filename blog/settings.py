@@ -49,11 +49,11 @@ INSTALLED_APPS = [
     'post',
     'rest_framework',
     'corsheaders',
-    # 'accounts',
     'djoser',
+#     'accounts'
 ]
 
-
+  
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',

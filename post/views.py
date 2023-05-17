@@ -1,3 +1,4 @@
+
 from rest_framework.views import APIView
 from .models import Post, Comment, Like
 from rest_framework.response import Response
@@ -16,9 +17,7 @@ class PostList(generics.ListCreateAPIView):
 
 
 class PostDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Post.objects.all()
-    serializer_class = PostSerializer
-    permission_classes = [AllowAny]
+
 
     def perform_destroy(self, instance):
         # Delete associated image if any
@@ -76,3 +75,4 @@ class LikeList(generics.ListCreateAPIView):
 
             serializer = self.get_serializer(like)
             return Response(serializer.data, status=201)
+
