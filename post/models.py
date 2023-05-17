@@ -22,8 +22,8 @@ class Comment(models.Model):
     comment_date = models.DateTimeField(auto_now=True)
     post = models.ForeignKey(Post, related_name='comments', on_delete=models.CASCADE)
 
-    # def __str__(self):
-    #     return self.comment
+    def __str__(self):
+        return self.comment
 
     # If I want to display it by date
     # class Meta:
