@@ -2,17 +2,13 @@ from rest_framework import serializers
 from post.models import Post, Comment, Like
 
 # Comment Serializer
-
-
 class CommentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Comment
-        fields = ['comment']
+        fields = ['comment', 'post']
 
 # Like Serializer
-
-
 class LikeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Like
@@ -27,9 +23,14 @@ class LikeSerializer(serializers.ModelSerializer):
 #         fields = ['id', 'username', 'posts', 'comments']
 
 
-# Post Serializer
+#Post serializer
 class PostSerializer(serializers.ModelSerializer):
     # owner = serializers.ReadOnlyField(source='owner.username')
+    
+    #this shows the Comment ID
+    # comments = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+   
+   #This shows the comment content
     comments = CommentSerializer(many=True, read_only=True)
     likes_count = serializers.SerializerMethodField()
 

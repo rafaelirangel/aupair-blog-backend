@@ -1,9 +1,6 @@
-
 from django.db import models
 
 # Post model
-
-
 class Post(models.Model):
     post_img = models.ImageField(upload_to='post_img', null=True, blank=True)
     title = models.CharField(max_length=50, blank=False)
@@ -18,15 +15,12 @@ class Post(models.Model):
         return self.likes.count()
 
 # Comment Model
-
-
 class Comment(models.Model):
     # This connects this model with the user If the user is deleted the comment will be deleted as well
     # username = models.ForeignKey(User, related_name='details', on_delete=models.CASCADE)
     comment = models.CharField(max_length=250, blank=True)
     comment_date = models.DateTimeField(auto_now=True)
-    post = models.ForeignKey(
-        Post, related_name='comments', on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, related_name='comments', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.comment
@@ -36,9 +30,9 @@ class Comment(models.Model):
     #     ordering = ['comment_date']
 
 # Like model
-
-
 class Like(models.Model):
     # username = models.ForeignKey(User, related_name='details', on_delete=models.CASCADE)
-    post = models.ForeignKey(
-        Post, related_name='post_likes', on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, related_name='post_likes', on_delete=models.CASCADE)
+
+   
+
