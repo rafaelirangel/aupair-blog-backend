@@ -9,8 +9,6 @@ from django.shortcuts import get_object_or_404
 from django.db.models import F
 
 # Post CRUD
-
-
 class PostList(generics.ListCreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
@@ -34,9 +32,6 @@ class CommentList(generics.ListCreateAPIView):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
     permission_classes = [AllowAny]
-
-    # def perform_create(self, serializer):
-    #     serializer.save(owner=self.request.user)
 
 
 class CommentDetail(generics.RetrieveUpdateDestroyAPIView):
