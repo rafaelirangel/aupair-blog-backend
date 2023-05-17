@@ -17,11 +17,11 @@ class Post(models.Model):
 
     def can_edit(self, user):
         return user == self.user
+    
     def delete(self, *args, **kwargs):
         # Delete the image file if it exists
         if self.post_img:
             if os.path.isfile(self.post_img.path):
                 os.remove(self.post_img.path)
-    def can_delete(self, user):
-        return user == self.user
-    super().delete(*args, **kwargs)
+        # Call the delete method of the parent class
+        super().delete(*args, **kwargs)
