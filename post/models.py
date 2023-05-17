@@ -34,5 +34,3 @@ class Like(models.Model):
     # username = models.ForeignKey(User, related_name='details', on_delete=models.CASCADE)
     post = models.ForeignKey(Post, related_name='post_likes', on_delete=models.CASCADE)
 
-   
-
