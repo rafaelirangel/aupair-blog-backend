@@ -1,1 +1,1 @@
-web: gunicorn carebeyondborders.wsgi --log-file -
+web: gunicorn aupair-blog-backend.wsgi --log-file -
