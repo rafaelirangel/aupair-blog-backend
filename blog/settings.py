@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 import os
 from pathlib import Path
-from whitenoise.middleware import WhiteNoiseMiddleware
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -27,7 +26,9 @@ SECRET_KEY = 'django-insecure-x%n6e$z5)#@72*6g$o3ox_#i3048p9aj9_(2%3&%lgcc#9n+h(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['CareBeyondBorders.com']
+ALLOWED_HOSTS = [
+    'CareBeyondBorders.com',
+    ]
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost',
@@ -61,7 +62,6 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'social_django.middleware.SocialAuthExceptionMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
