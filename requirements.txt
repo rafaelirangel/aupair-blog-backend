@@ -1,4 +1,4 @@
-asgiref==3.6.0
+asgiref==3.7.0
 boto3==1.26.133
 botocore==1.29.133
 certifi==2023.5.7
@@ -40,5 +40,5 @@ six==1.16.0
 social-auth-app-django==5.2.0
 social-auth-core==4.4.2
 sqlparse==0.4.4
-urllib3==1.25.4,<1.27
+urllib3==1.25.4
 validators==0.20.0
