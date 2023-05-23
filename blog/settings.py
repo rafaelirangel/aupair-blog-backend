@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'CareBeyondBorders.com',
+    'carebeyondborders-front.vercel.app',
     ]
 
 CORS_ALLOWED_ORIGINS = [
@@ -38,7 +39,7 @@ CORS_ALLOWED_ORIGINS = [
     'https://localhost:3000',
     'https://carebeyondborders-front-nateleo91.vercel.app/blog',
 ]
-CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_CREDENTIALS = False
 
 # Application definition
 
@@ -51,7 +52,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'post',
     'rest_framework',
-    # 'corsheaders',
+    'corsheaders',
     # 'djoser',
     # 'accounts'
 ]
@@ -59,7 +60,7 @@ INSTALLED_APPS = [
   
 
 MIDDLEWARE = [
-    # 'corsheaders.middleware.CorsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'social_django.middleware.SocialAuthExceptionMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -87,6 +88,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 
 WSGI_APPLICATION = 'blog.wsgi.application'
