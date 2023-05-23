@@ -27,8 +27,10 @@ SECRET_KEY = 'django-insecure-x%n6e$z5)#@72*6g$o3ox_#i3048p9aj9_(2%3&%lgcc#9n+h(
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    'localhost',
     'CareBeyondBorders.com',
     'carebeyondborders-front.vercel.app',
+    'https://carebeyondborders.herokuapp.com',
     ]
 
 CORS_ALLOWED_ORIGINS = [
