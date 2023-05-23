@@ -37,7 +37,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://0.0.0.0',
     'http://127.0.0.1:3000',
     'https://localhost:3000',
-    'https://carebeyondborders-front-nateleo91.vercel.app/blog',
+    'https://carebeyondborders-front-nateleo91.vercel.app',
 ]
 CORS_ALLOW_CREDENTIALS = False
 
