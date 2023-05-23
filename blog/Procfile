@@ -1,0 +1,1 @@
+web: gunicorn carebeyondborders.wsgi --log-file -
