@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 import os
 from pathlib import Path
-import dj_database_url
+# import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -40,7 +40,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://0.0.0.0',
     'http://127.0.0.1:3000',
     'https://localhost:3000',
-    'https://carebeyondborders-front-nateleo91.vercel.app',
+    'https://carebeyondborders-nateleo91.vercel.app',
 ]
 CORS_ALLOW_CREDENTIALS = True
 
@@ -100,7 +100,13 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 DATABASES = {
-    'default': dj_database_url.config(default='postgresql://cbb_admin:care1234:5432/blog')
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'blog',
+        'USER': 'cbb_admin',
+        'PASSWORD': 'care1234',
+        'HOST': 'localhost'
+    }
 }
 
 
