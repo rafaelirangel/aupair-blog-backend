@@ -33,6 +33,12 @@ class PostSerializer(serializers.ModelSerializer):
    #This shows the comment content
     comments = CommentSerializer(many=True, read_only=True)
     likes_count = serializers.SerializerMethodField()
+    
+    # def update(self, instance, validated_data):
+    #     instance.title = validated_data.get('title', instance.title)
+    #     instance.message = validated_data.get('message', instance.message)
+    #     instance.save()
+    #     return instance
 
     class Meta:
         model = Post

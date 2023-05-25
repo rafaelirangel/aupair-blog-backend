@@ -6,6 +6,7 @@ from .serializers import PostSerializer, CommentSerializer, LikeSerializer
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from django.shortcuts import get_object_or_404
 from django.db.models import F
+from post.permissions import IsOwnerOrReadOnly
 
 # Post CRUD
 class PostList(generics.ListCreateAPIView):
