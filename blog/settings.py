@@ -30,7 +30,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     'CareBeyondBorders.com',
-    'https://carebeyondborders-dv1nrb1oq-nateleo91.vercel.app',
+    'carebeyondborders-bj35x8ia4-nateleo91.vercel.app',
     'https://carebeyondborders.herokuapp.com',
     ]
 
@@ -40,7 +40,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://0.0.0.0',
     'http://127.0.0.1:3000',
     'https://localhost:3000',
-    'https://carebeyondborders-dv1nrb1oq-nateleo91.vercel.app',
+    'https://carebeyondborders-bj35x8ia4-nateleo91.vercel.app',
 ]
 CORS_ALLOW_CREDENTIALS = True
 
