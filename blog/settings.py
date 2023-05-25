@@ -4,8 +4,6 @@ from pathlib import Path
 from corsheaders.defaults import default_headers
 from datetime import timedelta
 
-from whitenoise.middleware import WhiteNoiseMiddleware
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -19,12 +17,17 @@ SECRET_KEY = 'django-insecure-x%n6e$z5)#@72*6g$o3ox_#i3048p9aj9_(2%3&%lgcc#9n+h(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['CareBeyondBorders.com']
+ALLOWED_HOSTS = [
+    'localhost',
+    'CareBeyondBorders.com',
+    'https://carebeyondborders-dv1nrb1oq-nateleo91.vercel.app',
+    'https://carebeyondborders.herokuapp.com',
+]
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
-    'http://127.0.0.1:3000'
-    'https://carebeyondborders-front-nateleo91.vercel.app/blog',
+    'http://127.0.0.1:3000',
+    'https://carebeyondborders-bj35x8ia4-nateleo91.vercel.app',
 ]
 
 # CORS_ALLOW_CREDENTIALS = True
@@ -75,7 +78,6 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'social_django.middleware.SocialAuthExceptionMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
